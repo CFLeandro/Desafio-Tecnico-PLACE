@@ -1,0 +1,34 @@
+
+# -----------------------------------------------------
+# Configuracao da porta e contexto da aplica��o  
+# -----------------------------------------------------  
+server:
+  port: 8080
+  servlet.context-path: /placeti
+
+# --------------------------------------------------------
+# configuracao do banco de dados
+# --------------------------------------------------------
+spring:
+  sql.init.mode: always
+  datasource:
+    url: jdbc:h2:mem:database
+    driverClassName: org.h2.Driver
+    username: admin
+    password: admin  
+
+# --------------------------------------------------------
+# configuracao do H2
+# --------------------------------------------------------
+  h2:
+    console:
+      enabled: true
+      path: /h2-console  
+
+# --------------------------------------------------------
+# configuracoes da JPA
+# --------------------------------------------------------
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect    
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: none
